@@ -1,16 +1,16 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import "../styles/App.css"
 
 
 const Validate = () => {
     const [username, setUsername] = useState("");
     const [password, setpassword] = useState("");
-    const [err, seterr] = useState  (false);
+    const [err, seterr] = useState(false);
 
     const handlechange = (e) => {
         const { name, value } = e.target;
 
-        (name == "username") ?  setUsername(value) :setpassword(value);
+        (name == "username") ? setUsername(value) : setpassword(value);
     }
 
     const handleClick = () => {
@@ -30,7 +30,7 @@ const Validate = () => {
                 <input type={"password"} name="password" value={password} onChange={handlechange}></input>
             </div>
             {err ? <div id='errorMessage'>
-                Both username and password are required.
+                <p>Both username and password are required.</p>
             </div> : ""
             }
 
